@@ -131,29 +131,32 @@ display: block;
 <h2 class = "pictureBaaki"><div>Picture abhi baaki hai mere dost</div>
 <div>Some more wishes</div></h2>
 <div>
-<span ><button type="button">Mommy Papa ki wish</button></span>
-<span style="padding-left 20px"><button type="button">Mommy ki wish</button></span>
+<span ><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%208.52.00%20PM.mp4?raw=true" type="button">Mommy Papa ki wish</button></span>
+<span ><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%209.01.44%20PM.mp4?raw=true" type="button">Mommy ki wish</button></span>
 </div>
 <div style = "height: 20px"></div>
 <div>
-<span ><button type="button">Dakshu ki wish</button></span>
-<span style="padding-left 20px"><button type="button">Shibbu ki wish</button></span>
+<span ><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%205.47.38%20PM.mp4?raw=true" type="button">Dakshu ki wish</button></span>
+<span ><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%204.55.35%20PM.mp4?raw=true" type="button">Shibbu ki wish</button></span>
 </div>
 <div style = "height: 20px"></div>
 <div>
-<span ><button type="button">Panda ki wish</button></span>
-<span style="padding-left 20px"><button type="button">Gullu ki wish</button></span>
+<span ><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%2010.05.09%20PM.mp4?raw=true" type="button">Panda ki wish</button></span>
+<span><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/VID_20200510182036.mp4?raw=true" type="button">Gullu ki wish</button></span>
 </div>
 <div style = "height: 20px"></div>
 <div>
-<span ><button type="button">Bua Dhriti Vatsal ki wish</button></span>
-<span style="padding-left 20px"><button type="button">Amma Chachi Tashu ki wish</button></span>
+<span ><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%208.19.20%20PM.mp4?raw=true" type="button">Bua Dhriti Vatsal ki wish</button></span>
+<span ><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%206.27.55%20PM.mp4?raw=true" type="button">Amma Chachi Tashu ki wish</button></span>
 </div>
 <div style = "height: 20px"></div>
 <div>
-<span ><button type="button">Neha ki wish</button></span>
-<span style="padding-left 20px"><button type="button">Mayur ki wish</button></span>
+<span ><button class = "choice" data-url = "https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%206.33.17%20PM.mp4?raw=true" type="button">Neha ki wish</button></span>
+<span ><button class = "choice" data-url = "" type="button">Mayur ki wish</button></span>
 </div>
+<video id = "video-template" style="width: 100%" controls>
+  <source src="https://github.com/mukulbansal3092/mukulbansal3092.github.io/blob/master/videos/WhatsApp%20Video%202020-05-10%20at%208.52.00%20PM.mp4?raw=true" type="video/mp4">
+</video>
 </div>
 <div id="myModal" class="modal">
   <span class = "next"><button type="button">Next</button></span>
@@ -206,8 +209,11 @@ if(index < arr.length - 1){
 index = index + 1;
 modalImg.src = arr[index].url;
   captionText.innerHTML = arr[index].caption;
+  if (index == arr.length - 1)
+  {
+  flag = true;
+  }
 }
-else { flag = true;}
 });
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
@@ -231,6 +237,11 @@ span.onclick = function() {
   $("#wishHolder").show();
   }
 }
+$('button.choice').click(function(){
+var url = $(this).attr("data-url");
+$('video source').attr("src", url);
+$('video')[0].load();
+});
  
 </script>
   
