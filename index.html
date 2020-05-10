@@ -9,25 +9,23 @@
   z-index: 0;
 }
 .audio-img{
-width: 50%;
-z-index: 0;
-margin: auto;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 </style>
 </head>
 <body>
 <div >
 <img src = "hbd.gif" onload="" class ="bday-img" onclick="playAudio()">
-
-<div class = "audio-img">
-<img src = "tapme.gif"  onclick="playAudio()">
+<img src = "tapme.gif"  onclick="playAudio()" class = "audio-img">
 <audio controls id = "myAudio" style="display:none">
   <source src="hbd.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 </img>
 
-</div>
 </div>
 </body>
 </html>
