@@ -37,6 +37,7 @@ display: block;
   display: block;
   width: 80%;
   max-width: 700px;
+  max-height: 50%;
 }
 
 /* Caption of Modal Image */
@@ -142,17 +143,16 @@ display: block;
 var x = document.getElementById("myAudio"); 
 var tapMe = document.getElementById("tap-me-bday"); 
 x.loop = true;
-var y = 0;
 function playAudio() { 
-if(y==0){
   x.play(); 
-  y = y+1;
-  } 
 }
 var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-
+$('.prev').click(function(){
+alert("prev");
+});
+$('.next').click(function(){});
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 tapMe.onclick = function(){
