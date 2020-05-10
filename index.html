@@ -113,18 +113,47 @@ display: block;
   .modal-content {
     width: 100%;
   }
+  h2.pictureBaaki {
+  text-align: center;
+}
 </style>
 </head>
 <body>
-<div >
-
-
+<div id = "mainHolder">
 <img src = "hbd.gif" onload="" class ="bday-img" onclick="playAudio()">
 <img src = "tapme.gif" id = "tap-me-bday" class = "audio-img">
 <audio controls id = "myAudio" style="display:none">
   <source src="hbd.mp3" type="audio/mpeg">
 </audio>
 </img>
+</div>
+<div id = "wishHolder" style = "display: none">
+<h2 class = "pictureBaaki"><div>Picture abhi baaki hai mere dost</div>
+<div>Some more wishes</div></h2>
+<div>
+<span ><button type="button">Mommy Papa ki wish</button></span>
+<span style="padding-left 20px"><button type="button">Mommy ki wish</button></span>
+</div>
+<div style = "height: 20px"></div>
+<div>
+<span ><button type="button">Dakshu ki wish</button></span>
+<span style="padding-left 20px"><button type="button">Shibbu ki wish</button></span>
+</div>
+<div style = "height: 20px"></div>
+<div>
+<span ><button type="button">Panda ki wish</button></span>
+<span style="padding-left 20px"><button type="button">Gullu ki wish</button></span>
+</div>
+<div style = "height: 20px"></div>
+<div>
+<span ><button type="button">Bua Dhriti Vatsal ki wish</button></span>
+<span style="padding-left 20px"><button type="button">Amma Chachi Tashu ki wish</button></span>
+</div>
+<div style = "height: 20px"></div>
+<div>
+<span ><button type="button">Neha ki wish</button></span>
+<span style="padding-left 20px"><button type="button">Mayur ki wish</button></span>
+</div>
 </div>
 <div id="myModal" class="modal">
   <span class = "next"><button type="button">Next</button></span>
@@ -156,6 +185,7 @@ var arr = [{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3
  {url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/13.jpeg", caption: "Sabka dhyaan rakhne wali Sonal"},
  {url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/15.jpg", caption: "Meri Sonal, we're perfect with each other <3"}];
 var x = document.getElementById("myAudio"); 
+var flag = false;
 var tapMe = document.getElementById("tap-me-bday"); 
 x.loop = true;
 function playAudio() { 
@@ -177,6 +207,7 @@ index = index + 1;
 modalImg.src = arr[index].url;
   captionText.innerHTML = arr[index].caption;
 }
+else { flag = true;}
 });
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
@@ -195,6 +226,11 @@ span.onclick = function() {
   modal.style.display = "none";
   modal.style.display = "none";
   x.pause();
-} 
+  if(flag){
+  $("#mainHolder").hide();
+  $("#wishHolder").show();
+  }
+}
+ 
 </script>
   
