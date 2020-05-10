@@ -140,6 +140,21 @@ display: block;
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"></script>
 <script>
+var arr = [{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/01.jpeg", caption: "Chhotu Sonal"}, 
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/02.jpeg", caption: "Rotlu Sonal"}, 
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/03.jpg", caption: "Bhukkad Sonal, jo haath lage woh kha jeyegi, mitti plastic chalk multani bhi sab"},
+ {url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/12.jpeg", caption: "Bhukkad Sonal, jo haath lage woh kha jeyegi, mitti plastic chalk multani bhi sab"},
+ {url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/14.jpeg", caption: "Moti Sonal :D :P XD"},
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/04.jpg", caption: "Pagal Sonal, yes, you're right, she stuck a roller in her hair playing with it"}, 
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/05.jpg", caption: "Videshi Sonal"}, 
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/06.jpg", caption: "Desi Sonal, ohh yes she can do both :D"}, 
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/07.jpg", caption: "Darawni Sonal"}, 
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/08.jpeg", caption: "Adventurous Sonal, mera kya hoga :'("},
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/09.jpg", caption: "Sotlu bewdi Sonal"}, 
+{url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/10.jpg", caption: "Pelu Sonal"},
+ {url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/11.jpeg", caption: "Impossible kaam karne wali, mujhe dance karane wali Sonal"},
+ {url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/13.jpeg", caption: "Sabka dhyaan rakhne wali Sonal"},
+ {url: "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/15.jpg", caption: "Meri Sonal, we're perfect with each other <3"}];
 var x = document.getElementById("myAudio"); 
 var tapMe = document.getElementById("tap-me-bday"); 
 x.loop = true;
@@ -147,18 +162,28 @@ function playAudio() {
   x.play(); 
 }
 var modal = document.getElementById("myModal");
-
+var index = 0;
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 $('.prev').click(function(){
-alert("prev");
+if(index > 0){
+index = index - 1;
+modalImg.src = arr[index].url;
+  captionText.innerHTML = arr[index].caption;
+}
 });
-$('.next').click(function(){});
+$('.next').click(function(){
+if(index < arr.length - 1){
+index = index + 1;
+modalImg.src = arr[index].url;
+  captionText.innerHTML = arr[index].caption;
+}
+});
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 tapMe.onclick = function(){
   modal.style.display = "block";
-  modalImg.src = "https://raw.githubusercontent.com/mukulbansal3092/mukulbansal3092.github.io/master/images/WhatsApp%20Image%202020-05-10%20at%207.08.01%20PM%20(25).jpeg";
-  captionText.innerHTML = "Hello";
+  modalImg.src = arr[index].url;
+  captionText.innerHTML = arr[index].caption;
   playAudio();
 }
 
